@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='SIW')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div>
+    	<h4 th:text="#{header.menuAdmin}">Menu</h4>
+		<div>
+			<h4>Lista dei credentials</h4>
+			<ul>
+				<li th:each="user : ${users}">
+					<a href="user.html" 
+					   th:href="@{'/admin'+'/user' + '/' + ${user.id}}" 
+					   th:text="${user.id}+' '+${user.nome}+' '+${user.cognome}" >Penna rossa</a>
+				</li>
+			</ul>
+		
+		</div>
+   		<div>
+			<a th:href="@{/logout}">Logout</a>
+   		</div>
+    </div>
+    <footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>

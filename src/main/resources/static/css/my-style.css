@@ -1,0 +1,54 @@
+header {
+    display: flex;
+    height: 120px;
+    min-width: 120px;
+    align-items: center;
+    color: #fff;
+    text-shadow: #000 0 0 .2em;
+}
+
+header > h1 {
+    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+        fantasy;
+    color: #fff;
+    margin: 2%;
+}
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a:active {
+    text-decoration: none;
+    color: white;
+}
+
+h4{
+    color: #fff;
+}
+body{
+    /*background-color: green;*/
+   background: url(/images/idk.jpg); 
+   background-attachment: fixed;
+   background-position: top left;
+   background-size: cover; 
+   background-origin: border-box;
+}
+
+footer {
+    border-top-style: outset;
+    color: #fff;
+    margin-top: 2em;
+	}
+	
+span.input {width: 30%;}

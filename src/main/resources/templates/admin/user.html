@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='Books Demo')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div>
+    	<h4>Dettagli User</h4>
+    	<div th:if="${user}" th:object="${user}">
+			<h5 th:text="*{id}">id</h5>
+			<span th:text="*{nome}">nome </span>
+			<span th:text="*{cognome}">cognome </span>
+			<br>
+   		</div>
+    	<div th:unless="${user}">Questo libro non esiste</div>
+    </div>
+	<a th:href="@{'/admin/deleteUser' + '/' + ${user.id}}" th:text="Elimina"></a> 
+	<!--<a th:href="@{'/deleteCredentials/'+${credential.id}}" th:text="Elimina"></a>-->
+    <footer th:replace="fragments/base.html :: fondo('/default')"></footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
+	<head th:replace="fragments/base.html :: headerfiles(title='Books Demo')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
+	<div>
+    	<h4 th:text="#{header.index}">Welcome Page</h4>
+    </div>
+	<div>
+		<h4>Lista libri</h4>
+		<ul>
+			<li th:each="libro : ${libri}">
+				<a href="libro.html" 
+				   th:href="@{'/libro' + '/' + ${libro.id}}" 
+				   th:text="${libro.titolo}">Penna rossa</a>
+			</li>
+		</ul>
+	</div>
+	<!--
+	<div sec:authorize="isAnonymous()">
+		<a th:href="@{/login}">Login</a> 
+		<a th:href="@{/register}">Register</a>
+	
+	<div>
+	-->
+</div>
+    <footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+</body>
+</html>

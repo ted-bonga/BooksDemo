@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='Books Demo')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+    	<h4>Lista dei libri</h4>
+		<ul>
+			<li th:each="libro : ${libri}">
+				<a href="libro.html" 
+				   th:href="@{'/libro' + '/' + ${libro.id}}" 
+				   th:text="${libro.titolo}">Penna rossa</a>
+			</li>
+		</ul>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo('/default')"></footer>
+</body>
+</html>
